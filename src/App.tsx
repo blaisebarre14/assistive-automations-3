@@ -111,7 +111,7 @@ function App() {
             </AnimatedText>
 
             <AnimatedText delay={0.5}>
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin mb-16 leading-tight">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-extralight mb-16 leading-tight">
                 <div className="spaced-letters-wide text-glow mb-4">
                   AUTOMATE
                 </div>
@@ -148,7 +148,7 @@ function App() {
         <section className="py-32 px-8">
           <div className="max-w-7xl mx-auto">
             <AnimatedSection className="text-center mb-24">
-              <h2 className="text-4xl md:text-6xl font-thin mb-8 spaced-letters text-glow">
+              <h2 className="text-4xl md:text-6xl font-extralight mb-8 spaced-letters text-glow">
                 OUR SERVICES
               </h2>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto font-light">
@@ -179,7 +179,7 @@ function App() {
                 whileHover={{ scale: 1.02 }}
                 className="space-y-4"
               >
-                <div className="text-5xl md:text-6xl font-thin text-glow">
+                <div className="text-5xl md:text-6xl font-extralight text-glow">
                   10+
                 </div>
                 <div className="text-lg text-gray-300 spaced-letters">Industries Served with Tailored Automations</div>
@@ -188,7 +188,7 @@ function App() {
                 whileHover={{ scale: 1.02 }}
                 className="space-y-4"
               >
-                <div className="text-5xl md:text-6xl font-thin text-glow">
+                <div className="text-5xl md:text-6xl font-extralight text-glow">
                   24/7
                 </div>
                 <div className="text-lg text-gray-300 spaced-letters">AI Support Coverage</div>
@@ -197,7 +197,7 @@ function App() {
                 whileHover={{ scale: 1.02 }}
                 className="space-y-4"
               >
-                <div className="text-5xl md:text-6xl font-thin text-glow">
+                <div className="text-5xl md:text-6xl font-extralight text-glow">
                   40%
                 </div>
                 <div className="text-lg text-gray-300 spaced-letters">Average Reduction in Manual Tasks</div>
@@ -227,7 +227,7 @@ function App() {
               </div>
             </motion.div>
 
-            <h2 className="text-4xl md:text-6xl font-thin mb-8 spaced-letters text-glow">
+            <h2 className="text-4xl md:text-6xl font-extralight mb-8 spaced-letters text-glow">
               READY TO TRANSFORM?
             </h2>
 

@@ -25,7 +25,7 @@ export const ContactSection = () => {
     <section className="py-32 px-8 border-t border-gray-800/20">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-24">
-          <h2 className="text-4xl md:text-6xl font-thin mb-8 spaced-letters text-glow">
+          <h2 className="text-4xl md:text-6xl font-extralight mb-8 spaced-letters text-glow">
             CONTACT US
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto font-light">
