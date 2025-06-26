@@ -16,13 +16,14 @@ export const Logo = ({ size = 'sm', className = '' }: LogoProps) => {
       whileHover={{ scale: 1.05 }}
       className={`flex items-center gap-3 ${className}`}
     >
-      <div className={`${sizeClasses[size]} border border-gray-700/30 rounded-lg flex items-center justify-center backdrop-blur-sm overflow-hidden`}>
+      <div className={`${sizeClasses[size]} flex items-center justify-center`}>
         <img 
           src="/logo/A_logo_in_white_color_is_displayed_on_a_solid_blac.png" 
           alt="Assistive Automations Logo" 
-          className={`${size === 'sm' ? 'w-5 h-5' : 'w-10 h-10'} object-contain filter drop-shadow-lg`}
+          className={`${size === 'sm' ? 'w-5 h-5' : 'w-10 h-10'} object-contain`}
           style={{
-            filter: 'drop-shadow(0 0 5px rgba(59, 130, 246, 0.3))'
+            filter: 'brightness(0) invert(1) drop-shadow(0 0 5px rgba(59, 130, 246, 0.3))',
+            mixBlendMode: 'screen'
           }}
         />
       </div>

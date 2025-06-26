@@ -214,13 +214,14 @@ function App() {
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
               className="inline-block mb-12"
             >
-              <div className="w-16 h-16 border border-gray-700/30 rounded-full flex items-center justify-center backdrop-blur-sm overflow-hidden">
+              <div className="w-16 h-16 flex items-center justify-center">
                 <img 
                   src="/logo/A_logo_in_white_color_is_displayed_on_a_solid_blac.png" 
                   alt="Assistive Automations Logo" 
-                  className="w-10 h-10 object-contain filter drop-shadow-lg"
+                  className="w-10 h-10 object-contain"
                   style={{
-                    filter: 'drop-shadow(0 0 5px rgba(59, 130, 246, 0.3))'
+                    filter: 'brightness(0) invert(1) drop-shadow(0 0 5px rgba(59, 130, 246, 0.3))',
+                    mixBlendMode: 'screen'
                   }}
                 />
               </div>
