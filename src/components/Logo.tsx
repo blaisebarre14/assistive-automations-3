@@ -27,9 +27,10 @@ export const Logo = ({ size = 'sm', className = '' }: LogoProps) => {
           }}
         />
       </div>
-      <span className={`font-thin spaced-letters ${size === 'sm' ? 'text-lg' : 'text-2xl'}`}>
-        ASSISTIVE AUTOMATIONS
-      </span>
+      <div className={`font-thin spaced-letters ${size === 'sm' ? 'text-sm' : 'text-xl'} flex flex-col leading-tight`}>
+        <span>ASSISTIVE</span>
+        <span>AUTOMATIONS</span>
+      </div>
     </motion.div>
   );
 };
