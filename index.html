@@ -32,28 +32,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js"></script>
-  </head>
-  <body>
-    <spline-viewer url="https://prod.spline.design/your-id/scene.splinecode"></spline-viewer>
-
-    <!-- Add this JavaScript BELOW the viewer to remove logo -->
-    <script>
-      const interval = setInterval(() => {
-        const viewer = document.querySelector('spline-viewer');
-        if (viewer && viewer.shadowRoot) {
-          const logo = viewer.shadowRoot.querySelector('#logo');
-          if (logo) {
-            logo.remove();
-            clearInterval(interval);
-          }
-        }
-      }, 500);
-    </script>
-  </body>
-</html>
-
