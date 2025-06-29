@@ -62,31 +62,31 @@ function App() {
         {/* Animated gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
         
-        {/* Animated particles */}
-        <div className="absolute inset-0">
-          {[...Array(50)].map((_, i) => (
+        {/* Animated particles - simplified to avoid performance issues */}
+        <div className="absolute inset-0 opacity-30">
+          {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-white/20 rounded-full"
-              initial={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
               }}
               animate={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
+                opacity: [0.2, 0.8, 0.2],
+                scale: [1, 1.5, 1],
               }}
               transition={{
-                duration: Math.random() * 20 + 10,
+                duration: Math.random() * 3 + 2,
                 repeat: Infinity,
-                repeatType: "reverse",
+                delay: Math.random() * 2,
               }}
             />
           ))}
         </div>
         
         {/* Dark overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
       {/* Content */}
