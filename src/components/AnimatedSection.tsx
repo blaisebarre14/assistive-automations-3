@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ReactNode, CSSProperties } from 'react';
 
 interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
 }
 
-export const AnimatedSection = ({ children, className = '' }: AnimatedSectionProps) => {
+export const AnimatedSection = ({ children, className = '', style }: AnimatedSectionProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -17,6 +18,7 @@ export const AnimatedSection = ({ children, className = '' }: AnimatedSectionPro
         ease: [0.25, 0.1, 0.25, 1]
       }}
       className={className}
+      style={style}
     >
       {children}
     </motion.div>
