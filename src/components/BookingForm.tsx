@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { X } from 'lucide-react';
@@ -36,28 +37,71 @@ export const BookingForm = ({ isOpen, onClose }: BookingFormProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      style={{
+        position: 'fixed',
+        inset: '0',
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        backdropFilter: 'blur(8px)',
+        zIndex: 50,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '16px'
+      }}
       onClick={onClose}
     >
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
-        className="bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md border border-gray-700/40 rounded-lg p-8 max-w-md w-full relative"
+        style={{
+          background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.9) 0%, rgba(31, 41, 55, 0.8) 100%)',
+          backdropFilter: 'blur(16px)',
+          border: '1px solid rgba(55, 65, 81, 0.4)',
+          borderRadius: '8px',
+          padding: '32px',
+          maxWidth: '448px',
+          width: '100%',
+          position: 'relative'
+        }}
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+          style={{
+            position: 'absolute',
+            top: '16px',
+            right: '16px',
+            color: '#9ca3af',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: '4px'
+          }}
         >
           <X size={20} />
         </button>
 
-        <h2 className="text-xl font-light text-white mb-8 spaced-letters">Book a Strategy Call</h2>
+        <h2 style={{
+          fontSize: '20px',
+          fontWeight: '300',
+          color: '#ffffff',
+          marginBottom: '32px',
+          letterSpacing: '0.1em'
+        }}>
+          Book a Strategy Call
+        </h2>
         
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div>
-            <label className="block text-sm font-light text-gray-300 mb-2 spaced-letters">
+            <label style={{
+              display: 'block',
+              fontSize: '14px',
+              fontWeight: '300',
+              color: '#d1d5db',
+              marginBottom: '8px',
+              letterSpacing: '0.1em'
+            }}>
               Full Name
             </label>
             <input
@@ -66,13 +110,30 @@ export const BookingForm = ({ isOpen, onClose }: BookingFormProps) => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-gray-800/40 border border-gray-600/40 rounded-lg text-white placeholder-gray-500 focus:border-gray-500/60 focus:outline-none transition-colors backdrop-blur-sm font-light"
+              style={{
+                width: '100%',
+                padding: '12px 16px',
+                backgroundColor: 'rgba(31, 41, 55, 0.4)',
+                border: '1px solid rgba(75, 85, 99, 0.4)',
+                borderRadius: '8px',
+                color: '#ffffff',
+                fontSize: '14px',
+                fontWeight: '300',
+                backdropFilter: 'blur(8px)'
+              }}
               placeholder="Your full name"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-light text-gray-300 mb-2 spaced-letters">
+            <label style={{
+              display: 'block',
+              fontSize: '14px',
+              fontWeight: '300',
+              color: '#d1d5db',
+              marginBottom: '8px',
+              letterSpacing: '0.1em'
+            }}>
               Email Address
             </label>
             <input
@@ -81,13 +142,30 @@ export const BookingForm = ({ isOpen, onClose }: BookingFormProps) => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-gray-800/40 border border-gray-600/40 rounded-lg text-white placeholder-gray-500 focus:border-gray-500/60 focus:outline-none transition-colors backdrop-blur-sm font-light"
+              style={{
+                width: '100%',
+                padding: '12px 16px',
+                backgroundColor: 'rgba(31, 41, 55, 0.4)',
+                border: '1px solid rgba(75, 85, 99, 0.4)',
+                borderRadius: '8px',
+                color: '#ffffff',
+                fontSize: '14px',
+                fontWeight: '300',
+                backdropFilter: 'blur(8px)'
+              }}
               placeholder="your@email.com"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-light text-gray-300 mb-2 spaced-letters">
+            <label style={{
+              display: 'block',
+              fontSize: '14px',
+              fontWeight: '300',
+              color: '#d1d5db',
+              marginBottom: '8px',
+              letterSpacing: '0.1em'
+            }}>
               Company Name
             </label>
             <input
@@ -95,13 +173,30 @@ export const BookingForm = ({ isOpen, onClose }: BookingFormProps) => {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-gray-800/40 border border-gray-600/40 rounded-lg text-white placeholder-gray-500 focus:border-gray-500/60 focus:outline-none transition-colors backdrop-blur-sm font-light"
+              style={{
+                width: '100%',
+                padding: '12px 16px',
+                backgroundColor: 'rgba(31, 41, 55, 0.4)',
+                border: '1px solid rgba(75, 85, 99, 0.4)',
+                borderRadius: '8px',
+                color: '#ffffff',
+                fontSize: '14px',
+                fontWeight: '300',
+                backdropFilter: 'blur(8px)'
+              }}
               placeholder="Your company"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-light text-gray-300 mb-2 spaced-letters">
+            <label style={{
+              display: 'block',
+              fontSize: '14px',
+              fontWeight: '300',
+              color: '#d1d5db',
+              marginBottom: '8px',
+              letterSpacing: '0.1em'
+            }}>
               Tell us about your needs
             </label>
             <textarea
@@ -109,7 +204,18 @@ export const BookingForm = ({ isOpen, onClose }: BookingFormProps) => {
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              className="w-full px-4 py-3 bg-gray-800/40 border border-gray-600/40 rounded-lg text-white placeholder-gray-500 focus:border-gray-500/60 focus:outline-none transition-colors resize-none backdrop-blur-sm font-light"
+              style={{
+                width: '100%',
+                padding: '12px 16px',
+                backgroundColor: 'rgba(31, 41, 55, 0.4)',
+                border: '1px solid rgba(75, 85, 99, 0.4)',
+                borderRadius: '8px',
+                color: '#ffffff',
+                fontSize: '14px',
+                fontWeight: '300',
+                resize: 'none',
+                backdropFilter: 'blur(8px)'
+              }}
               placeholder="Describe your automation needs..."
             />
           </div>
@@ -118,7 +224,19 @@ export const BookingForm = ({ isOpen, onClose }: BookingFormProps) => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            className="w-full bg-white/10 border border-gray-600/40 text-white py-3 rounded-lg font-light hover:bg-white/20 hover:border-gray-500/60 transition-all duration-300 backdrop-blur-sm spaced-letters text-sm"
+            style={{
+              width: '100%',
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(75, 85, 99, 0.4)',
+              color: '#ffffff',
+              padding: '12px',
+              borderRadius: '8px',
+              fontWeight: '300',
+              backdropFilter: 'blur(8px)',
+              letterSpacing: '0.1em',
+              fontSize: '14px',
+              cursor: 'pointer'
+            }}
           >
             Schedule Call
           </motion.button>

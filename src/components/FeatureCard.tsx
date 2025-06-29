@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
@@ -24,21 +25,49 @@ export const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCard
         y: -5,
         transition: { duration: 0.2, ease: "easeOut" }
       }}
-      className="bg-gradient-to-br from-gray-900/30 to-gray-800/20 backdrop-blur-md border border-gray-700/30 rounded-lg p-8 hover:border-gray-600/40 transition-all duration-200 group"
+      style={{
+        background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.3) 0%, rgba(31, 41, 55, 0.2) 100%)',
+        backdropFilter: 'blur(16px)',
+        border: '1px solid rgba(55, 65, 81, 0.3)',
+        borderRadius: '8px',
+        padding: '32px',
+        transition: 'all 0.2s ease'
+      }}
     >
       <motion.div
         whileHover={{ 
           scale: 1.1,
           transition: { duration: 0.2, ease: "easeOut" }
         }}
-        className="w-12 h-12 border border-gray-600/30 rounded-lg flex items-center justify-center mb-6 group-hover:border-gray-500/50 transition-all duration-200 backdrop-blur-sm"
+        style={{
+          width: '48px',
+          height: '48px',
+          border: '1px solid rgba(75, 85, 99, 0.3)',
+          borderRadius: '8px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: '24px',
+          backdropFilter: 'blur(8px)'
+        }}
       >
         {icon}
       </motion.div>
-      <h3 className="text-lg font-light text-white mb-4 group-hover:text-gray-200 transition-colors duration-200 spaced-letters">
+      <h3 style={{
+        fontSize: '18px',
+        fontWeight: '300',
+        color: '#ffffff',
+        marginBottom: '16px',
+        letterSpacing: '0.1em'
+      }}>
         {title}
       </h3>
-      <p className="text-gray-300 leading-relaxed font-light text-sm">
+      <p style={{
+        color: '#d1d5db',
+        lineHeight: '1.6',
+        fontWeight: '300',
+        fontSize: '14px'
+      }}>
         {description}
       </p>
     </motion.div>

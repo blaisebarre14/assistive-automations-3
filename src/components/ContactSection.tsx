@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
@@ -22,19 +23,40 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section className="py-32 px-8 border-t border-gray-800/20">
-      <div className="max-w-7xl mx-auto">
-        <AnimatedSection className="text-center mb-24">
-          <h2 className="text-4xl md:text-6xl font-extralight mb-8 spaced-letters text-glow">
+    <section style={{
+      padding: '128px 32px',
+      borderTop: '1px solid rgba(55, 65, 81, 0.2)'
+    }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <AnimatedSection style={{ textAlign: 'center', marginBottom: '96px' }}>
+          <h2 style={{
+            fontSize: 'clamp(32px, 6vw, 96px)',
+            fontWeight: '100',
+            marginBottom: '32px',
+            letterSpacing: '0.1em',
+            textShadow: '0 0 20px rgba(255, 255, 255, 0.1)'
+          }}>
             CONTACT US
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-light">
+          <p style={{
+            fontSize: '18px',
+            color: '#d1d5db',
+            maxWidth: '512px',
+            margin: '0 auto',
+            fontWeight: '300'
+          }}>
             Ready to transform your business? Get in touch with our team of automation experts 
             and discover how AI can revolutionize your operations.
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '32px',
+          maxWidth: '1024px',
+          margin: '0 auto'
+        }}>
           {contactMethods.map((method, index) => (
             <AnimatedText key={index} delay={index * 0.1}>
               <motion.a
@@ -44,27 +66,65 @@ export const ContactSection = () => {
                   y: -5,
                   transition: { duration: 0.2, ease: "easeOut" }
                 }}
-                className="block bg-gradient-to-br from-gray-900/30 to-gray-800/20 backdrop-blur-md border border-gray-700/30 rounded-lg p-8 hover:border-gray-600/40 transition-all duration-200 group text-center"
+                style={{
+                  display: 'block',
+                  background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.3) 0%, rgba(31, 41, 55, 0.2) 100%)',
+                  backdropFilter: 'blur(16px)',
+                  border: '1px solid rgba(55, 65, 81, 0.3)',
+                  borderRadius: '8px',
+                  padding: '32px',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  transition: 'all 0.2s ease'
+                }}
               >
                 <motion.div
                   whileHover={{ 
                     scale: 1.1,
                     transition: { duration: 0.2, ease: "easeOut" }
                   }}
-                  className="w-16 h-16 border border-gray-600/30 rounded-lg flex items-center justify-center mb-6 mx-auto group-hover:border-gray-500/50 transition-all duration-200 backdrop-blur-sm"
+                  style={{
+                    width: '64px',
+                    height: '64px',
+                    border: '1px solid rgba(75, 85, 99, 0.3)',
+                    borderRadius: '8px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '24px',
+                    margin: '0 auto 24px auto',
+                    backdropFilter: 'blur(8px)'
+                  }}
                 >
                   {method.icon}
                 </motion.div>
                 
-                <h3 className="text-lg font-light text-white mb-2 group-hover:text-gray-200 transition-colors duration-200 spaced-letters">
+                <h3 style={{
+                  fontSize: '18px',
+                  fontWeight: '300',
+                  color: '#ffffff',
+                  marginBottom: '8px',
+                  letterSpacing: '0.1em'
+                }}>
                   {method.title}
                 </h3>
                 
-                <div className="text-xl font-light text-white mb-3 group-hover:text-gray-200 transition-colors duration-200">
+                <div style={{
+                  fontSize: '20px',
+                  fontWeight: '300',
+                  color: '#ffffff',
+                  marginBottom: '12px'
+                }}>
                   {method.value}
                 </div>
                 
-                <p className="text-gray-300 text-sm font-light leading-relaxed">
+                <p style={{
+                  color: '#d1d5db',
+                  fontSize: '14px',
+                  fontWeight: '300',
+                  lineHeight: '1.6'
+                }}>
                   {method.description}
                 </p>
               </motion.a>

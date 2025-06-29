@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
@@ -14,11 +15,28 @@ export const GlowButton = ({
   variant = 'primary',
   className = '' 
 }: GlowButtonProps) => {
-  const baseClasses = "px-8 py-4 rounded-lg font-light transition-all duration-300 backdrop-blur-sm border";
+  const baseStyle = {
+    padding: '16px 32px',
+    borderRadius: '8px',
+    fontWeight: '300',
+    transition: 'all 0.3s ease',
+    backdropFilter: 'blur(8px)',
+    border: '1px solid',
+    cursor: 'pointer',
+    background: 'none'
+  };
   
-  const variantClasses = {
-    primary: "bg-white/10 border-gray-600/40 text-white hover:bg-white/20 hover:border-gray-500/60 hover:shadow-lg hover:shadow-white/10",
-    secondary: "bg-transparent border-gray-600/40 text-white hover:bg-white/5 hover:border-gray-500/60"
+  const variantStyles = {
+    primary: {
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      borderColor: 'rgba(75, 85, 99, 0.4)',
+      color: '#ffffff'
+    },
+    secondary: {
+      backgroundColor: 'transparent',
+      borderColor: 'rgba(75, 85, 99, 0.4)',
+      color: '#ffffff'
+    }
   };
 
   return (
@@ -26,7 +44,11 @@ export const GlowButton = ({
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className={`${baseClasses} ${variantClasses[variant]} ${className}`}
+      style={{
+        ...baseStyle,
+        ...variantStyles[variant]
+      }}
+      className={className}
     >
       {children}
     </motion.button>
