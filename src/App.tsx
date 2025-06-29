@@ -57,19 +57,36 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      {/* Spline 3D Background */}
+      {/* Animated Background */}
       <div className="fixed inset-0 z-0">
-        <spline-viewer 
-          url="https://prod.spline.design/ngoos7MkbmXN2Mhu/scene.splinecode"
-          style={{
-            width: '100%',
-            height: '100%',
-            opacity: '0.4'
-          }}
-        ></spline-viewer>
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
+        
+        {/* Animated particles */}
+        <div className="absolute inset-0">
+          {[...Array(50)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white/20 rounded-full"
+              initial={{
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+              }}
+              animate={{
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+              }}
+              transition={{
+                duration: Math.random() * 20 + 10,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            />
+          ))}
+        </div>
         
         {/* Dark overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Content */}
@@ -111,7 +128,7 @@ function App() {
             </AnimatedText>
 
             <AnimatedText delay={0.5}>
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-extralight mb-16 leading-tight">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin mb-16 leading-tight">
                 <div className="spaced-letters-wide text-glow mb-4">
                   AUTOMATE
                 </div>
@@ -148,7 +165,7 @@ function App() {
         <section className="py-32 px-8">
           <div className="max-w-7xl mx-auto">
             <AnimatedSection className="text-center mb-24">
-              <h2 className="text-4xl md:text-6xl font-extralight mb-8 spaced-letters text-glow">
+              <h2 className="text-4xl md:text-6xl font-thin mb-8 spaced-letters text-glow">
                 OUR SERVICES
               </h2>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto font-light">
@@ -179,7 +196,7 @@ function App() {
                 whileHover={{ scale: 1.02 }}
                 className="space-y-4"
               >
-                <div className="text-5xl md:text-6xl font-extralight text-glow">
+                <div className="text-5xl md:text-6xl font-thin text-glow">
                   10+
                 </div>
                 <div className="text-lg text-gray-300 spaced-letters">Industries Served with Tailored Automations</div>
@@ -188,7 +205,7 @@ function App() {
                 whileHover={{ scale: 1.02 }}
                 className="space-y-4"
               >
-                <div className="text-5xl md:text-6xl font-extralight text-glow">
+                <div className="text-5xl md:text-6xl font-thin text-glow">
                   24/7
                 </div>
                 <div className="text-lg text-gray-300 spaced-letters">AI Support Coverage</div>
@@ -197,7 +214,7 @@ function App() {
                 whileHover={{ scale: 1.02 }}
                 className="space-y-4"
               >
-                <div className="text-5xl md:text-6xl font-extralight text-glow">
+                <div className="text-5xl md:text-6xl font-thin text-glow">
                   40%
                 </div>
                 <div className="text-lg text-gray-300 spaced-letters">Average Reduction in Manual Tasks</div>
@@ -227,7 +244,7 @@ function App() {
               </div>
             </motion.div>
 
-            <h2 className="text-4xl md:text-6xl font-extralight mb-8 spaced-letters text-glow">
+            <h2 className="text-4xl md:text-6xl font-thin mb-8 spaced-letters text-glow">
               READY TO TRANSFORM?
             </h2>
 

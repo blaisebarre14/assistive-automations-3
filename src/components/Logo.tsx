@@ -28,8 +28,8 @@ export const Logo = ({ size = 'sm', className = '' }: LogoProps) => {
         />
       </div>
       <div className={`spaced-letters ${size === 'sm' ? 'text-sm' : 'text-xl'} flex flex-col leading-tight`}>
-        <span className="font-medium">ASSISTIVE</span>
-        <span className="font-extralight">AUTOMATIONS</span>
+        <span className="font-semibold text-lg">ASSISTIVE</span>
+        <span className="font-thin text-sm">AUTOMATIONS</span>
       </div>
     </motion.div>
   );
